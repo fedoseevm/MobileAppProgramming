@@ -13,4 +13,9 @@ public class Task {
     public int getPriority() {
         return Priority;
     }
+
+    public String getDesc() {
+        return Desc;
+    }
 }
+
