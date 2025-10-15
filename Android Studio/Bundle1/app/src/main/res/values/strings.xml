@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bundle1</string>
+    <string name="oblicz">Oblicz</string>
+    <string name="powrot">Powrót</string>
+</resources>
