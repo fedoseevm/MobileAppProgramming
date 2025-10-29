@@ -3,6 +3,7 @@ package com.example.baza1;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -25,17 +26,33 @@ public class MyHelper extends SQLiteOpenHelper {
     private static final String NAME_COL = "imie";
 
     // below variable id for our course duration column.
-    private static final String DURATION_COL = "wiek";
+    private static final String AGE_COL = "wiek";
 
     // below variable for our course description column.
-    private static final String DESCRIPTION_COL = "hobby";
-    public MyHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    private static final String HOBBY_COL = "hobby";
+
+    private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" +
+            ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            NAME_COL + " VARCHAR(255), " +
+            AGE_COL + " INTEGER, " +
+            HOBBY_COL + "VARCHAR(255));";
+
+    private static final String DROP_TABLE ="DROP TABLE IF EXISTS " + TABLE_NAME + ";";
+
+    private Context context;
+    public MyHelper(@Nullable Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+        this.context = context;
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        try {
+            db.execSQL(DROP_TABLE);
+            db.execSQL(CREATE_TABLE);
+        } catch (Exception e) {
+            Log.d("Baza",""+e);
+        }
     }
 
     @Override

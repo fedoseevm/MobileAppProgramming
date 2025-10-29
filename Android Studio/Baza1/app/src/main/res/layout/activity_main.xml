@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:text="Imię:" />
         <EditText
+            android:id="@+id/t1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp" />
@@ -35,6 +36,7 @@
             android:layout_height="wrap_content"
             android:text="Wiek:" />
         <EditText
+            android:id="@+id/t2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp" />
@@ -50,6 +52,7 @@
             android:layout_height="wrap_content"
             android:text="Hobby:" />
         <EditText
+            android:id="@+id/t3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp" />
