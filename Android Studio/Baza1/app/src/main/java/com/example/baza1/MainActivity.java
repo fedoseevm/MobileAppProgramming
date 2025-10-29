@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             osoba.setName(stringData1);
             osoba.setAge(intData1);
             osoba.setHobby(stringData2);
+
+            osobaBiznes.AddUser(osoba);
         }
     }
 }
