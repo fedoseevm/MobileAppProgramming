@@ -10,6 +10,12 @@ public class SMS {
         this.message = message;
     }
 
+    public SMS(int id, String title, String message) {
+        this.id = id;
+        this.title = title;
+        this.message = message;
+    }
+
     public int getId() {
         return id;
     }
