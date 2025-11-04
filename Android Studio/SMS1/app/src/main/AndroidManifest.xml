@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SMS1">
         <activity
+            android:name=".AddSMSActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
