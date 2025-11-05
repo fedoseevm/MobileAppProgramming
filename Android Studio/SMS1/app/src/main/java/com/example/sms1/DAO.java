@@ -15,7 +15,7 @@ public class DAO {
 
         ContentValues cv = new ContentValues();
         cv.put("COL_TITLE", sms.getTitle());
-        cv.put("COL_MESSAGE", sms.getTitle());
+        cv.put("COL_MESSAGE", sms.getMessage());
 
         long id = db.insert("sms", null, cv);
 
