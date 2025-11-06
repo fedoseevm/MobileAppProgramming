@@ -3,7 +3,7 @@ package com.example.roomhelper1;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "notes")
 public class Note {
     @PrimaryKey(autoGenerate = true)
     public int Id;
@@ -31,5 +31,10 @@ public class Note {
 
     public void setMessage(String message) {
         Message = message;
+    }
+
+    @Override
+    public String toString() {
+        return Id + " " + Message;
     }
 }
