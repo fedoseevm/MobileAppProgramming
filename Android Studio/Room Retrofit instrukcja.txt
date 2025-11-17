@@ -1,0 +1,113 @@
+1. Dependencies
+
+val room_version = "2.8.3"
+implementation("androidx.room:room-runtime:$room_version")
+annotationProcessor("androidx.room:room-compiler:$room_version")
+
+implementation("com.squareup.retrofit2:retrofit:2.9.0")
+implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+implementation("com.github.bumptech.glide:glide:4.16.0")
+annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
+
+
+2. Permissions
+
+<uses-permission android:name="android.permission.INTERNET" />
+
+
+
+3. Room Stack
+
+@Entity(tableName = "notes")
+public class Note {
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+    public String message;
+}
+
+@Dao
+public interface NoteDao {
+    @Query("SELECT * FROM notes;")
+    List<Note> getAllNotes();
+
+    @Insert
+    void insertNote(Note note);
+}
+
+@Database(entities = {Note.class}, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
+    public abstract NoteDao noteDao();
+    private static AppDatabase Instance;
+
+    public static AppDatabase getInstance(Context context) {
+        if (Instance == null)
+            Instance = Room.databaseBuilder(co();ntext,AppDatabase.class,"Notes.db").build
+        return Instance;
+    }
+}
+
+Użycie:
+
+AppDatabase appDatabase = AppDatabase.getInstance(this);
+List<Note> notesDao = appDatabase.noteDao().getAllNotes();
+
+
+
+4. Rerofit Stack
+
+public class DogResponse {
+    @SerializedName("message")
+    private String message;
+
+    @SerializedName("status")
+    private String status;
+}
+
+public interface DogApiService {
+    @GET("api/breeds/image/random")
+    Call<DogResponse> getRandomDogImage();
+}
+
+public class ApiClient {
+    private static final String BASE_URL = "https://dog.ceo/";
+    private static Retrofit retrofit = null;
+
+    public static Retrofit getClient() {
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
+}
+
+Użycie:
+DogApiService apiService = ApiClient.getClient().create(DogApiService.class);
+Call<DogResponse> call = apiService.getRandomDogImage();
+call.enqueue(new Callback<DogResponse>() {
+            @Override
+            public void onResponse(Call<DogResponse> call, Response<DogResponse> response) {
+                //response.body().getMessage();
+                try {
+                } catch (MalformedURLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            @Override
+            public void onFailure(Call<DogResponse> call, Throwable t) {
+            }
+        });
+
+
+
+5. Glide Stack
+
+Nie ma czegoś takiego. Jest po prostu wywołanie:
+
+Glide.with(MainActivity.this)
+    .load(imageUrl) <- String po prostu z https...
+    .into(imageViewDog);  <- W jaki kontener wkładamy
