@@ -1,0 +1,8 @@
+Kroki: 
+1. Dodać potrzebne zależności do pliku app/build.gradle.
+2. Pozwolić aplikacji na dostęp do internetu.
+3. Stworzyć klase odpowiadającą za obsługiwanie odpowiedzi API (np. DogResponse)
+4. Stworzyć obiekt klasy Retrofit
+5. Stworzyć interface API, aby określić endpointy.
+6. Stworzyć widok aplikacji.
+7. Zaprogramować MainActivity.
