@@ -39,10 +39,10 @@
         android:layout_marginHorizontal="30dp">
 
         <RadioButton
+            android:id="@+id/rb1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/standard_brak_dodatkowego_rabatu"
-            android:checked="true" />
+            android:text="@string/standard_brak_dodatkowego_rabatu" />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,8 +74,8 @@
 
     <ImageView
         android:id="@+id/iv_oszczednosci"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
 
     <TextView
         android:id="@+id/tv_wynik"
