@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:background="@color/light_gray">
+
+    <EditText
+        android:id="@+id/et_cena"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/cena_produktu_zl" />
+
+    <TextView
+        android:id="@+id/tv_rabat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rabat"
+        android:textColor="@color/dark_green"/>
+
+    <SeekBar
+        android:id="@+id/seekBar_procentRabatu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="50"
+        android:progress="10"
+        android:layout_marginHorizontal="30dp" />
+    
+    <RadioGroup
+        android:id="@+id/rg_rodzajRabatu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/standard_brak_dodatkowego_rabatu"
+            android:checked="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/premium_5_rabatu" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vip_10_rabatu" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cb_czyKarta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/karta_stalego_klienta" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_wysylka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/darmowa_wysylka_od_200_zl" />
+
+    <Button
+        android:id="@+id/btn_oblicz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oblicz"
+        android:backgroundTint="@color/green" />
+
+    <ImageView
+        android:id="@+id/iv_oszczednosci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_wynik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

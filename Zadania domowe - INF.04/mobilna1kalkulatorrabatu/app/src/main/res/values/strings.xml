@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">mobilna1 - kalkulator rabatu</string>
+    <string name="cena_produktu_zl">Cena produktu (zł)</string>
+    <string name="rabat">Rabat:</string>
+    <string name="standard">Standard</string>
+    <string name="premium">Premium</string>
+    <string name="vip">VIP</string>
+    <string name="standard_brak_dodatkowego_rabatu">Standard (brak dodatkowego rabatu)</string>
+    <string name="premium_5_rabatu">Premium (+5% rabatu)</string>
+    <string name="vip_10_rabatu">VIP (+10% rabatu)</string>
+    <string name="karta_stalego_klienta">Karta stałego klienta</string>
+    <string name="darmowa_wysylka_od_200_zl">Darmowa wysyłka (od 200 zł)</string>
+    <string name="oblicz">OBLICZ</string>
+</resources>
