@@ -97,12 +97,14 @@ public class MainActivity extends AppCompatActivity {
                     imageOszednosci.setImageResource(R.drawable.oszednosci_duze);
                 }
 
+                int cenaKoncowa = cena * (1 - procentRabatu / 100);
+
                 textWynik = findViewById(R.id.tv_wynik);
                 textWynik.setText(
                         "Cena przed: " + cena + "zł\n" +
                         "Rabat: " + procentRabatu + "%\n" +
-                        "Cena końcowa: " + cena * (1 - procentRabatu / 100) + "zł\n" +
-                        "Wysyłka: ");
+                        "Cena końcowa: " + cenaKoncowa + "zł\n" +
+                        "Wysyłka: " + (cenaKoncowa >= 200 && czyDarmowaWysylka ? "tak" : "nie"));
             }
         });
     }
