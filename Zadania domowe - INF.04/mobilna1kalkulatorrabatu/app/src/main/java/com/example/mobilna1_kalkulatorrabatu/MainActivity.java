@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textRabat = findViewById(R.id.tv_rabat);
-                textRabat.setText("Rabat: ");
+                textRabat.setText(getString(R.string.rabat));
 
                 etCena = findViewById(R.id.et_cena);
                 String inputCena = etCena.getText().toString().trim();
@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 switchCzyDarmowaWysylka = findViewById(R.id.switch_wysylka);
                 boolean czyDarmowaWysylka = switchCzyDarmowaWysylka.isChecked();
 
-                textRabat.setText("Rabat: " + procentRabatu + "%");
-
+//                textRabat.setText("Rabat: " + procentRabatu + "%");
+                textRabat.setText(getString(R.string.procent_rabatu, procentRabatu));
                 imageOszednosci = findViewById(R.id.iv_oszczednosci);
                 if (procentRabatu <= 20) {
                     imageOszednosci.setImageResource(R.drawable.oszednosci_male);
@@ -97,14 +97,22 @@ public class MainActivity extends AppCompatActivity {
                     imageOszednosci.setImageResource(R.drawable.oszednosci_duze);
                 }
 
-                int cenaKoncowa = cena * (1 - procentRabatu / 100);
+                double cenaKoncowa = cena * (1 - procentRabatu / 100.0);
 
                 textWynik = findViewById(R.id.tv_wynik);
-                textWynik.setText(
-                        "Cena przed: " + cena + "zł\n" +
-                        "Rabat: " + procentRabatu + "%\n" +
-                        "Cena końcowa: " + cenaKoncowa + "zł\n" +
-                        "Wysyłka: " + (cenaKoncowa >= 200 && czyDarmowaWysylka ? "tak" : "nie"));
+                String wysylka = (cenaKoncowa >= 200 && czyDarmowaWysylka) ? "tak" : "nie";
+//                textWynik.setText(
+//                        "Cena przed: " + cena + "zł\n" +
+//                        "Rabat: " + procentRabatu + "%\n" +
+//                        "Cena końcowa: " + cenaKoncowa + "zł\n" +
+//                        "Wysyłka: " + (cenaKoncowa >= 200 && czyDarmowaWysylka ? "tak" : "nie"));
+                textWynik.setText(getString(
+                        R.string.wynik,
+                        cena,
+                        procentRabatu,
+                        cenaKoncowa,
+                        wysylka
+                ));
             }
         });
     }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">mobilna1 - kalkulator rabatu</string>
     <string name="cena_produktu_zl">Cena produktu (zł)</string>
-    <string name="rabat">Rabat:</string>
+    <string name="rabat">Rabat: </string>
     <string name="standard">Standard</string>
     <string name="premium">Premium</string>
     <string name="vip">VIP</string>
@@ -11,4 +11,13 @@
     <string name="karta_stalego_klienta">Karta stałego klienta</string>
     <string name="darmowa_wysylka_od_200_zl">Darmowa wysyłka (od 200 zł)</string>
     <string name="oblicz">OBLICZ</string>
+    <string name="_0_percentage">0%</string>
+    <string name="_50_percentage">50%</string>
+    <string name="procent_rabatu">Rabat: %1$d%%</string>
+    <string name="wynik">
+        Cena przed: %1$d zł\n
+        Rabat: %2$d%%\n
+        Cena końcowa: %3$.2f zł\n
+        Darmowa wysyłka: %4$s
+    </string>
 </resources>
