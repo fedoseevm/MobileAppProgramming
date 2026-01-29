@@ -30,7 +30,6 @@
         android:min="0"
         android:max="50"
         android:progress="10"
-        android:layout_alignParentTop="true"
         android:layout_marginHorizontal="30dp" />
 
     <RelativeLayout
