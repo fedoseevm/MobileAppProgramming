@@ -90,15 +90,17 @@
         android:layout_marginHorizontal="30dp">
 
         <RadioButton
-            android:id="@+id/rb1"
+            android:id="@+id/rb_podstawowy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tryb podstawowy" />
         <RadioButton
+            android:id="@+id/rb_mieszany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tryb mieszany" />
         <RadioButton
+            android:id="@+id/rb_zaawansowany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tryb zaawansowany (min. 1 znak każdego typu)" />
